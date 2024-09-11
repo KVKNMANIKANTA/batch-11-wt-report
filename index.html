@@ -11,7 +11,7 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-color: #1b1b1b;
+        background-color: #1b1b1b; /* Fallback color */
         margin: 0;
         padding: 0;
         display: flex;
@@ -23,7 +23,7 @@
     #login-container, #game-container, #game-over-container {
         display: none;
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.7); /* Adjust background color as needed */
+        background-color: transparent; /* Ensure no overlay color */
         padding: 20px;
         border-radius: 25px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -38,6 +38,7 @@
         right: 0;
         bottom: 0;
         padding-top: 8vh;
+        background-color: transparent; /* Ensure no overlay color */
     }
     #game-name {
         font-size: 2.5em;
@@ -149,6 +150,7 @@
         document.getElementById('game-over-container').style.display = 'none';
         document.getElementById('game-container').style.display = 'block';
         document.body.style.backgroundImage = 'url("colorful-and-playful-numbers-bottom-border-seamless-pattern-background-perfect-for-nursery-kids-playro.jpg")'; // Game screen background
+        document.body.style.backgroundColor = 'transparent'; // Ensure no fallback color affects visibility
         score = 0;
         incorrectCount = 0;
         roundTimeLeft = 20;
